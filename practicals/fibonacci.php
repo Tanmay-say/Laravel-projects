@@ -1,22 +1,28 @@
 <?php
 
-function generateFibonacci($n) {
-    $fibonacciSequence = array();
-    $fibonacciSequence[0] = 0;
-    $fibonacciSequence[1] = 1;
+/**
+ * Swap two numbers.
+ *
+ * This function takes two numbers as input, swaps them, and prints the result.
+ *
+ * @param int $num1 The first number to be swapped.
+ * @param int $num2 The second number to be swapped.
+ */
+function swapNumbers($num1, $num2) {
+    echo "Before swapping: num1 = $num1, num2 = $num2\n";
 
-    for ($i = 2; $i < $n; $i++) {
-        $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
-    }
+    // Swapping without a temporary variable
+    list($num1, $num2) = array($num2, $num1);
 
-    return $fibonacciSequence;
+    echo "After swapping: num1 = $num1, num2 = $num2\n";
 }
 
-// Change the value of $n to generate Fibonacci sequence up to a different number
-$n = 10;
-$fibonacciSequence = generateFibonacci($n);
+// Example usage
+$number1 = 5;
+$number2 = 10;
 
-echo "Fibonacci Sequence up to $n terms: " . implode(", ", $fibonacciSequence) . "\n";
+// Call the function to swap numbers
+swapNumbers($number1, $number2);
 
 ?>
 
