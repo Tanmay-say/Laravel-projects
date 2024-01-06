@@ -1,23 +1,47 @@
 <?php
 
-function calculateFactorial($n) {
-    if ($n < 0) {
+/**
+ * Calculate the factorial of a number.
+ *
+ * This function calculates the factorial of a given number.
+ *
+ * @param int $number The number for which the factorial is calculated.
+ * @return int The factorial of the given number.
+ */
+function calculateFactorial($number) {
+    if ($number < 0) {
         return "Factorial is not defined for negative numbers.";
-    } elseif ($n == 0 || $n == 1) {
+    } elseif ($number == 0 || $number == 1) {
         return 1;
     } else {
         $factorial = 1;
-        for ($i = 1; $i <= $n; $i++) {
+        for ($i = 2; $i <= $number; $i++) {
             $factorial *= $i;
         }
         return $factorial;
     }
 }
 
-// Change the value of $number to calculate the factorial of a different number
-$number = 5;
-$result = calculateFactorial($number);
+/**
+ * Display the factorial result.
+ *
+ * This function prints the result of the factorial calculation to the console.
+ *
+ * @param int $number The number for which the factorial is calculated.
+ * @param int $result The calculated factorial result.
+ */
+function displayFactorialResult($number, $result) {
+    echo "Factorial of $number is: $result\n";
+}
 
-echo "Factorial of $number is: $result\n";
+// Example usage
+$numberToCalculateFactorial = 5;
+
+// Calculate the factorial
+$factorialResult = calculateFactorial($numberToCalculateFactorial);
+
+// Display the factorial result
+displayFactorialResult($numberToCalculateFactorial, $factorialResult);
 
 ?>
+
