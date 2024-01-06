@@ -33,28 +33,3 @@ class Practical {
     }
 }
 ?>
-
-21 changes: 21 additions & 0 deletions 21
-tests/Unit/PracticalTest.php
-@@ -0,0 +1,21 @@
-<?php
-
-namespace Tests\Unit;
-
-use PHPUnit\Framework\TestCase;
-
-require(__DIR__.'/../../practicals/Practical.php');
-use practicals\Practical;
-
-class PracticalTest extends TestCase
-{
-    /**
-     * A basic unit test example.
-     */
-    public function testAdd(): void
-    {
-        $this->assertEquals(Practical::add(1,3), 4);
-    }
-}
-
-?>
