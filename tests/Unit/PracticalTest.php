@@ -15,6 +15,7 @@ class PracticalTest extends TestCase {
         $this->assertEquals(Practical::add(1,3), 4);
     }
 
+    
     public function testAddAcceptsFloat(): void {
         $this->assertEquals(Practical::add(1.5, 3.5), 5.0);
     }
