@@ -73,6 +73,7 @@ class Song {
     public function getTempo() {
         return $this->tempo;
     }
+    
 }
 
 // Example usage:
