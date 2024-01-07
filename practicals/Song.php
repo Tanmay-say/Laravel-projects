@@ -9,10 +9,6 @@ class Song {
     private $genre;
     private $tempo;
 
-    /**
-     * Setter function for setting the title of the song
-     * @param string $title The title of the song
-     */
     public function setTitle($title) {
         $this->title = $title;
     }
@@ -62,11 +58,6 @@ class Song {
      * @param string $tempo The tempo of the song
      */
     public function setTempo($tempo) {
-        // Check if $tempo is an integer or integer string
-        if (!is_numeric($tempo) || !ctype_digit($tempo)) {
-            throw new \InvalidArgumentException("Tempo must be an integer or an integer string");
-        }
-
         $this->tempo = $tempo;
     }
 
@@ -81,7 +72,7 @@ class Song {
 }
 
 // Example usage:
-$song = new Song();
+/*$song = new Song();
 $song->setTitle("Bohemian Rhapsody");
 $song->setArtist("Queen");
 $song->setGenre("Rock");
@@ -90,5 +81,5 @@ $song->setTempo("70 BPM");
 echo "Title: " . $song->getTitle() . "\n";
 echo "Artist: " . $song->getArtist() . "\n";
 echo "Genre: " . $song->getGenre() . "\n";
-echo "Tempo: " . $song->getTempo() . "\n";
+echo "Tempo: " . $song->getTempo() . "\n";*/
 ?>
