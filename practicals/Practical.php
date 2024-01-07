@@ -9,6 +9,7 @@ class Practical {
         echo "Hello, World!\n";
     }
 
+    
     /**
      * Function to add two numbers
      * @param int $num1 The first number
