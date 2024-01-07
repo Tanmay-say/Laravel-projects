@@ -58,6 +58,11 @@ class Song {
      * @param string $tempo The tempo of the song
      */
     public function setTempo($tempo) {
+        // Check if $tempo is an integer or integer string
+        if (!is_numeric($tempo) || !ctype_digit($tempo)) {
+            throw new \InvalidArgumentException("Tempo must be an integer or an integer string");
+        }
+
         $this->tempo = $tempo;
     }
 
@@ -82,5 +87,3 @@ echo "Artist: " . $song->getArtist() . "\n";
 echo "Genre: " . $song->getGenre() . "\n";
 echo "Tempo: " . $song->getTempo() . "\n";
 ?>
-
-
