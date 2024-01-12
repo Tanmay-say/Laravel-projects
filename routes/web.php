@@ -33,3 +33,7 @@ Route::get('//veggies/baigan', function () {
 Route::get('/songs', function () {
     return view('songs', [ 'songs' => Song::all() ] );
 });
+
+Route::get('/songs_static', function () {
+    return view('songs_static');
+});
