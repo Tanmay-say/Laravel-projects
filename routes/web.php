@@ -1,7 +1,8 @@
 <?php
 
-use App\Models\Song;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\Song;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,21 +15,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+	return view('Welcome');
 });
 
 Route::get('/veggies', function () {
     return view('veggies');
 });
 
-Route::get('/veggies/{veggieName}', function (string $veggieName) {
-    return $veggieName;
-})->whereIn('veggieName', ['baigan', 'bhindi', 'aaloo', 'gobhi']);
+Route::get('/veggies/{veggiesName}', function (string $veggiesName) {
+	return $veggiesName;
+})->whereIn('veggiesName', ['baigan','bhindi', 'aaloo', 'gobhi']);
 
-Route::get('//veggies/baigan', function () {
-    return view('welcome');
+Route::get('/songs_static', function () {
+	$song1 = new Song();
+	$song1 -> setTitle("With you");
+	$song1 ->setArtist("A P Dhillon");
+
+	$song2 = new Song();
+	$song2 -> setTitle("My life");
+	$song2 ->setArtist("G P Nagpur");
+
+	$song3 = new Song();
+	$song3 -> setTitle("Libbas");
+	$song3 ->setArtist("KAKA");
+
+    return view('songs', [ 'songs'=> [ $song1 ,$song2 , $song3 ]]);
 });
+
 
 Route::get('/songs', function () {
     return view('songs', [ 'songs' => Song::all() ] );
@@ -37,3 +53,8 @@ Route::get('/songs', function () {
 Route::get('/songs_static', function () {
     return view('songs_static');
 });
+
+
+Route::get('/playlists/{playlistId}', function (string $playlistId) {
+	return view('playlist', ['songs' => Song::all(), 'playlistId' => $playlistId ]);
+  })->where('playlistId', '[0-9]+');
